@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Food;
+
 class HomeController extends Controller
 {
     /**
@@ -25,4 +27,26 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    //function for adding foods with their pictures in admin page
+    //Test: ??
+    public function addFoodPost(Request $request)
+    {
+          $file = $request->file('photo');
+          $fileName = time().''.$request->file('photo')->getClientOriginalName();
+          $fileName = str_replace(' ', '_', $fileName);
+          $food = new Food;
+          $food->name = $request->name;
+          //$kala->details=$request->details;
+          $food->foodPicName = $fileName;
+          $food->save();
+          \Storage::disk('foodpic')->put($food->foodPicName,file_get_contents($request->file('photo')->getRealPath()));
+          return redirect()->back()->with('message', 'The post successfully inserted.');
+    }
+
+    public function getFoods(Request $request){
+      $foods = Food::paginate(12);
+      return view('foods', ['foods' => $foods]);
+    }
+
 }

@@ -8,7 +8,7 @@ class Menu extends Model
 {
     //
 
-     public function groups()
+    public function groups()
     {
         return $this->hasMany('App\Group');
     }

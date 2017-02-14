@@ -14,10 +14,12 @@ class CreateFoodsTable extends Migration
     public function up()
     {
         Schema::create('foods', function (Blueprint $table) {
-             $table->integer('group_id')->unsigned();
+            /*$table->integer('group_id')->unsigned();
             $table->foreign('group_id')->references('id')->on('groups')
                         ->onDelete('cascade')
-                        ->onUpdate('restrict');
+                        ->onUpdate('restrict');*/
+            $table->char('name', 20)->unique();          
+            $table->string('foodPicName');
             $table->increments('id');
             $table->timestamps();
         });
