@@ -18,4 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/semantic2', function(){
+  return view('semantic');
+});
 
+Route::post('semantic2/{food}', 'HomeController@food');
+Route::get('foods/{foodid}', function ($foodid){
+    $food = App\Food::where('id', $foodid)->firstOrFail();
+    return view('food', ['food' => $food]);
+});
+
+//Admin page inserting food
+Route::get('/insertfood', function(){
+  return view('addFood');
+});
+
+Route::post('/insertfood', 'HomeController@addFoodPost');
+Route::get('hoger/foods', 'HomeController@getFoods');

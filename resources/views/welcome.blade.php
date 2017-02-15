@@ -11,6 +11,30 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <style>    body {
+                animation: colorchange 50s; /* animation-name followed by duration in seconds*/
+                /* you could also use milliseconds (ms) or something like 2.5s */
+                -webkit-animation: colorchange 50s; /* Chrome and Safari */
+            }
+
+            @keyframes colorchange
+            {
+                0%   {background: red;}
+                25%  {background: yellow;}
+                50%  {background: blue;}
+                75%  {background: green;}
+                100% {background: red;}
+            }
+
+            @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+            {
+                0%   {background: red;}
+                25%  {background: yellow;}
+                50%  {background: blue;}
+                75%  {background: green;}
+                100% {background: red;}
+            }</style>
+
         <style>
             html, body {
                 background-color: #fff;
@@ -79,14 +103,14 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Hoger
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
+                    <a href="/hoger/foods">Foods</a>
+                    <a href="/hoger/foods/{ foodid }">Laracasts</a>
+                    <a href="https://laravel-news.com">Contact Us</a>
+                    <a href="https://forge.laravel.com">About Us</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
