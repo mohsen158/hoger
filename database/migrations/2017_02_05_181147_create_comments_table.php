@@ -19,6 +19,7 @@ class CreateCommentsTable extends Migration
                         ->onDelete('cascade')
                         ->onUpdate('restrict');
             $table->increments('id');
+            $table->char('comment',50);
             $table->timestamps();
         });
     }

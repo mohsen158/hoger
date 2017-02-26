@@ -33,5 +33,7 @@ Route::get('/insertfood', function(){
   return view('addFood');
 });
 
+Route::post('addcomment', 'HomeController@addcomment');
+
 Route::post('/insertfood', 'HomeController@addFoodPost');
 Route::get('hoger/foods', 'HomeController@getFoods');

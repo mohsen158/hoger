@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 
 use App\Food;
@@ -45,8 +46,15 @@ class HomeController extends Controller
     }
 
     public function getFoods(Request $request){
-      $foods = Food::paginate(12);
-      return view('foods', ['foods' => $foods]);
+        $foods = Food::paginate(12);
+        return view('foods', ['foods' => $foods]);
+    }
+
+    public function addcomment(Request $request){
+        $user = $request->user();
+        $comment = new Comment($request->comment);
+        //dd($request->comment);
+        $user->comments()->save($comment);
     }
 
 }

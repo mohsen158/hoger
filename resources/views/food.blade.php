@@ -98,13 +98,14 @@
                         </div>
                     </div>
                 </div>
-                <form class="ui reply form">
+                <form class="ui reply form" action="/addcomment" method="post">
                     <div class="field">
-                        <textarea></textarea>
+                        <input type="hidden" name="_token" value="{{csrf_token()}}">
+                        <textarea name="comment"></textarea>
                     </div>
-                    <div class="ui blue labeled submit icon button">
+                    <button class="ui blue labeled submit icon button" type="submit">
                         <i class="icon edit"></i> Add Reply
-                    </div>
+                    </button>
                 </form>
             </div>
         </div>
