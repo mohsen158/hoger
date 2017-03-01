@@ -60,14 +60,15 @@ class HomeController extends Controller
     {
 
         $like = $food->users()->find(\Auth::user()->id);
+        $likes= $food->users()->get();
+
         if ($like != null) {
-            $like = $like->count();
+            $like = 1;
         } else {
             $like = 0;
         }
 
-
-        return view('food', ['food' => $food, 'like' => $like]);
+        return view('food', ['food' => $food, 'like' => $like,'likes'=>count($likes)]);
     }
 
     public function like(Food $food, User $user)

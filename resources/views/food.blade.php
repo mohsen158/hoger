@@ -2,16 +2,10 @@
 @section('content')
 
 
-    <div class="two column stackable ui grid">
-
-    </div>
-
-    <div class="">
-
-
         <div class="ui segment" style="direction: rtl;font-family: KoodakBold;">
 
             <div class="ui  card fluid">
+
                 <div class="content">
 
                     <div style="font-family: KoodakBold" class="header">{{$food->name}}</div>
@@ -31,7 +25,7 @@
 
 
                     <span class="right floated star">
-                   {{$like}} بار خوشمزه بوده
+                   {{$likes}} بار خوشمزه بوده
                 </div>
             </div>
 
@@ -49,7 +43,6 @@
                 </form>
             </div>
         </div>
-    </div>
 
 
 
@@ -57,11 +50,12 @@
 
 
 
-    <form id="form1" action="/like/{{$food->id}}/{{$food->id}}" method="post">
+
+    <form id="form1" action="/like/{{$food->id}}/{{Auth::user()->id}}" method="post">
         {{csrf_field()}}
     </form>
 
-    <form id="form0" action="/dislike/{{$food->id}}/{{$food->id}}" method="post">
+    <form id="form0" action="/dislike/{{$food->id}}/{{Auth::user()->id}}" method="post">
         {{csrf_field()}}
     </form>
 

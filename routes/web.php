@@ -34,4 +34,4 @@ Route::post('addcomment', 'HomeController@addcomment');
 Route::post('like/{food}/{user}','HomeController@like');
 Route::post('dislike/{food}/{user}','HomeController@dislike');
 Route::post('/insertfood', 'HomeController@addFoodPost');
-Route::get('foods', 'HomeController@getFoods');
+Route::get('foods', 'HomeController@getFoods')->name('foods');

@@ -12,7 +12,7 @@
                     <div class="ui header">{{$group->id}}</div>
                     <div class="ui vertical fluid menu">
                      @foreach($group->foods as $food)
-                        <a class="item">
+                        <a href="/foods/{{$food->id}}" class="item">
                             <h4 class="ui header">{{$food->name}}</h4>
                             {{--<p>Check out our new promotions</p>--}}
                         </a>
