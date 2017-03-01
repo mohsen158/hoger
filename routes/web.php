@@ -23,10 +23,7 @@ Route::get('/semantic2', function(){
 });
 
 Route::post('semantic2/{food}', 'HomeController@food');
-Route::get('foods/{foodid}', function ($foodid){
-    $food = App\Food::where('id', $foodid)->firstOrFail();
-    return view('food', ['food' => $food]);
-});
+Route::get('foods/{food}', 'HomeController@getfood');
 
 //Admin page inserting food
 Route::get('/insertfood', function(){
@@ -34,6 +31,7 @@ Route::get('/insertfood', function(){
 });
 
 Route::post('addcomment', 'HomeController@addcomment');
-
+Route::post('like/{food}/{user}','HomeController@like');
+Route::post('dislike/{food}/{user}','HomeController@dislike');
 Route::post('/insertfood', 'HomeController@addFoodPost');
-Route::get('hoger/foods', 'HomeController@getFoods');
+Route::get('foods', 'HomeController@getFoods');

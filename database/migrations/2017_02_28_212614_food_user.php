@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsTable extends Migration
+class FoodUser extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,18 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments', function (Blueprint $table) {
+        //
+        Schema::create('food_user', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('restrict');
-            $table->increments('id');
-            $table->text('comment');
-            $table->timestamps();
-//            $table->integer('food_id')->unsigned();
-//            $table->foreign('food_id')->references('id')->on('foods')
-//                ->onDelete('cascade')
-//                ->onUpdate('restrict');
+            $table->integer('food_id')->unsigned();
+            $table->foreign('food_id')->references('id')->on('foods')
+                ->onDelete('cascade')
+                ->onUpdate('restrict');
+
+
         });
     }
 
@@ -35,6 +35,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::dropIfExists('food_user');
     }
 }

@@ -526,7 +526,7 @@ $('.ui.sticky')
 $('.shape').shape();
 </script>
 
-  <script src="{{ asset('js/app.js') }}"></script>
+  <script src="{{ asset('foofoodjs.js') }}"></script>
   <script src="js/app.js"></script>
   <!--<script src="js/teacher.js"></script>-->
   <script src="js/vendor.js"></script>

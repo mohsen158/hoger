@@ -14,6 +14,7 @@ require('laravel-elixir-webpack');
 
 elixir(function(mix) {
      mix.browserSync({
-       proxy : 'hoger:2000/'
+       proxy : 'http://127.0.0.1:8000/hoger/foods/'
      });
+    mix.webpack('app.js');
 });

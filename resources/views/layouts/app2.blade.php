@@ -9,9 +9,27 @@
             src="https://code.jquery.com/jquery-3.1.1.min.js"
             integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
             crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="{{ asset('semantic/dist/semantic.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('semantic/dist/semantic.rtl.min.css') }}">
 
     <script src="{{ asset('semantic/dist/semantic.min.js') }}"></script>
+
+    <style type="text/css" media="screen, print">
+        @font-face {
+            font-family: "KoodakBold";
+            src: url(../font/KoodakBold.eot);
+            src: url(../font/KoodakBold.eot?#iefix) format("embedded-opentype"), url(../font/KoodakBold.woff) format("woff"), url(../font/KoodakBold.ttf) format("truetype"), url(../font/Yekan.svg#BYekan) format("svg");
+            font-weight: normal;
+            font-style: normal
+        }
+
+        body {
+            font-family: 'KoodakBold';
+        }
+        h3{
+            font-family: KoodakBold;
+        }
+    </style>
     <style>
         @import "http://fonts.googleapis.com/css?family=Lato:300";
 
@@ -21,7 +39,7 @@
             height: 110vh;
             color: white;
             text-align: center;
-            font-family: Lato, sans-serif;
+            font-family: KoodakBold, sans-serif;
             font-weight: 300;
             text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4);
             border-bottom: solid 5px white;
@@ -106,13 +124,11 @@
 
     </style>
 
-    <style>
-        body {
-            font-family: 'Tahoma';
-        }
-    </style>
+
 </head>
 <body style="background: linear-gradient(135deg, #ffa000 20%, #ff5000 80%);">
+
+
 
     <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; background: white;">
         <div class="container">
@@ -186,6 +202,7 @@
     </div>
     {{--<script  src="/js/app.js"></script>--}}
 <!-- Scripts -->
+
 </body>
 
 </html>
