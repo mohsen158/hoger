@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <!-- Start WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('engine1/style.css')}}"/>
     <script type="text/javascript" src="{{asset('engine1/jquery.js')}}"></script>
     <!-- End WOWSlider.com HEAD section -->
-
 
 
     <meta charset="utf-8">
@@ -33,7 +32,8 @@
         body {
             font-family: 'KoodakBold';
         }
-        h3{
+
+        h3 {
             font-family: KoodakBold;
         }
     </style>
@@ -133,113 +133,115 @@
 
 
 </head>
-<body style="background: linear-gradient(135deg, #ffa000 20%, #ff5000 80%);">
+<body style="background: linear-gradient(135deg, #ffa000 20%, #ff5000 80%);   ">
 
 
-
-    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; background: white;">
-        <div class="container">
-            <div class="navbar-header">
-
-
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+{{--<nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; background: white;">--}}
+{{--<div class="container">--}}
+{{--<div class="navbar-header">--}}
 
 
-                <a class="navbar-brand" href="{{ url('/') }}">
-                <!--{{ config('app.name', 'Laravel') }}-->
-                    Hoger
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
-
-                <ul class="nav navbar-nav">
-                    &nbsp;
-                </ul>
+{{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
+{{--data-target="#app-navbar-collapse">--}}
+{{--<span class="sr-only">Toggle Navigation</span>--}}
+{{--<span class="icon-bar"></span>--}}
+{{--<span class="icon-bar"></span>--}}
+{{--<span class="icon-bar"></span>--}}
+{{--</button>--}}
 
 
-                <ul class="nav navbar-nav navbar-right">
+{{--<a class="navbar-brand" href="{{ url('/') }}">--}}
+{{--<!--{{ config('app.name', 'Laravel') }}-->--}}
+{{--Hoger--}}
+{{--</a>--}}
+{{--</div>--}}
 
-                    @if (Auth::guest())
-                        <li><a href="{{ route('login') }}">Login</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
+{{--<div class="collapse navbar-collapse" id="app-navbar-collapse">--}}
 
-                            <ul class="dropdown-menu" role="menu">
-                                <li>
-                                    <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
+{{--<ul class="nav navbar-nav">--}}
+{{--&nbsp;--}}
+{{--</ul>--}}
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                          style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
-                                </li>
-                            </ul>
-                        </li>
-                    @endif
-                </ul>
-            </div>
+
+{{--<ul class="nav navbar-nav navbar-right">--}}
+
+{{--@if (Auth::guest())--}}
+{{--<li><a href="{{ route('login') }}">Login</a></li>--}}
+{{--<li><a href="{{ route('register') }}">Register</a></li>--}}
+{{--@else--}}
+{{--<li class="dropdown">--}}
+{{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"--}}
+{{--aria-expanded="false">--}}
+{{--{{ Auth::user()->name }} <span class="caret"></span>--}}
+{{--</a>--}}
+
+{{--<ul class="dropdown-menu" role="menu">--}}
+{{--<li>--}}
+{{--<a href="{{ route('logout') }}"--}}
+{{--onclick="event.preventDefault();--}}
+{{--document.getElementById('logout-form').submit();">--}}
+{{--Logout--}}
+{{--</a>--}}
+
+{{--<form id="logout-form" action="{{ route('logout') }}" method="POST"--}}
+{{--style="display: none;">--}}
+{{--{{ csrf_field() }}--}}
+{{--</form>--}}
+{{--</li>--}}
+{{--</ul>--}}
+{{--</li>--}}
+{{--@endif--}}
+{{--</ul>--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</nav>--}}
+
+<!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1">
+    <div class="ws_images">
+        <ul>
+            <li><a href="http://wowslider.com"><img src="{{asset('data1/images/fekr2telegram.jpg')}}" alt="wow slider"
+                                                    title="fekr2telegram" id="wows1_0"/></a></li>
+        </ul>
+    </div>
+    <div class="ws_bullets">
+        <div>
+            <a href="{{asset('data1/images/fekr2telegram.jpg')}}" title="fekr2telegram"><span><img
+                            src="data1/tooltips/fekr2telegram.jpg" alt="fekr2telegram"/>1</span></a>
+            <a href="{{asset('data1/images/shabih.jpg')}}" title="shabih"><span>2</span></a>
         </div>
-    </nav>
-
-    <!-- Start WOWSlider.com BODY section -->
-    <div id="wowslider-container1">
-        <div class="ws_images"><ul>
-                <li><a href="http://wowslider.com"><img src="{{asset('data1/images/fekr2telegram.jpg')}}" alt="wow slider" title="fekr2telegram" id="wows1_0"/></a></li>
-            </ul></div>
-        <div class="ws_bullets"><div>
-                <a href="{{asset('data1/images/fekr2telegram.jpg')}}" title="fekr2telegram"><span><img src="data1/tooltips/fekr2telegram.jpg" alt="fekr2telegram"/>1</span></a>
-                <a href="{{asset('data1/images/shabih.jpg')}}" title="shabih"><span>2</span></a>
-            </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery slider</a> by WOWSlider.com v8.7</div>
-        <div class="ws_shadow"></div>
     </div>
-    <script type="text/javascript" src="{{asset('engine1/wowslider.js')}}"></script>
-    <script type="text/javascript" src="{{asset('engine1/script.js')}}"></script>
-    <!-- End WOWSlider.com BODY section -->
+    <div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com">jquery slider</a> by
+        WOWSlider.com v8.7
+    </div>
+    <div class="ws_shadow"></div>
+</div>
+<script type="text/javascript" src="{{asset('engine1/wowslider.js')}}"></script>
+<script type="text/javascript" src="{{asset('engine1/script.js')}}"></script>
+<!-- End WOWSlider.com BODY section -->
 <br>
-    @yield('content')
+@yield('content')
 
-    <div style=" position: fixed; bottom: 0; font-family: KoodakBold" class="ui  fluid   menu centered  mobile  ">
-        @if (Auth::guest())
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        @else
-            <li class="dropdown">
+<div style=" position: fixed; bottom: 0; font-family: KoodakBold " class="ui  fluid  centered grid  menu      ">
+    @if (Auth::guest())
 
-
-
-                        <a class="red item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+        <a class="red item" href="{{ route('register') }}"> ثبت نام</a>
+    @else
+        <a class="red item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
+            خروج
+        </a>
 
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
 
-            </li>
+    <a href="/internet" class="orange item">اینترنت</a>
+    <a href="{{route('foods')}}" class="orange item">منو</a>
         @endif
-        <a class="orange item">اینترنت</a>
-        <a href="{{route('foods')}}" class="orange item">منو</a>
-
-    </div>
-    {{--<script  src="/js/app.js"></script>--}}
+</div>
+{{--<script  src="/js/app.js"></script>--}}
 <!-- Scripts -->
 
 </body>

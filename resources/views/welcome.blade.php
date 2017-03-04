@@ -11,6 +11,23 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <style type="text/css" media="screen, print">
+            @font-face {
+                font-family: "KoodakBold";
+                src: url(../font/KoodakBold.eot);
+                src: url(../font/KoodakBold.eot?#iefix) format("embedded-opentype"), url(../font/KoodakBold.woff) format("woff"), url(../font/KoodakBold.ttf) format("truetype"), url(../font/Yekan.svg#BYekan) format("svg");
+                font-weight: normal;
+                font-style: normal
+            }
+
+            body {
+                font-family: 'KoodakBold';
+            }
+
+            h3 {
+                font-family: KoodakBold;
+            }
+        </style>
         <style>    body {
                 animation: colorchange 50s; /* animation-name followed by duration in seconds*/
                 /* you could also use milliseconds (ms) or something like 2.5s */
@@ -102,8 +119,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Hoger
+                <div style="font-family: KoodakBold" class="title m-b-md">
+                    هوگر
                 </div>
 
                 <div class="links">

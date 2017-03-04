@@ -29,7 +29,7 @@ Route::get('foods/{food}', 'HomeController@getfood');
 Route::get('/insertfood', function(){
   return view('addFood');
 });
-
+Route::get('internet','HomeController@internet');
 Route::post('addcomment', 'HomeController@addcomment');
 Route::post('like/{food}/{user}','HomeController@like');
 Route::post('dislike/{food}/{user}','HomeController@dislike');

@@ -48,9 +48,15 @@ class HomeController extends Controller
         return redirect()->back()->with('message', 'The post successfully inserted.');
     }
 
+    public function internet()
+    {
+        $tel = \Auth::user()->phone;
+        return 1;
+    }
+
     public function getFoods(Request $request)
     {
-        $data= Group::with('foods')->get();
+        $data = Group::with('foods')->get();
 
         $foods = Food::paginate(12);
         return view('foods', ['data' => $data]);
@@ -60,7 +66,7 @@ class HomeController extends Controller
     {
 
         $like = $food->users()->find(\Auth::user()->id);
-        $likes= $food->users()->get();
+        $likes = $food->users()->get();
 
         if ($like != null) {
             $like = 1;
@@ -68,7 +74,7 @@ class HomeController extends Controller
             $like = 0;
         }
 
-        return view('food', ['food' => $food, 'like' => $like,'likes'=>count($likes)]);
+        return view('food', ['food' => $food, 'like' => $like, 'likes' => count($likes)]);
     }
 
     public function like(Food $food, User $user)
@@ -87,7 +93,7 @@ class HomeController extends Controller
     {
         $user = $request->user();
         $comment = new Comment();
-        $comment->comment=$request->comment;
+        $comment->comment = $request->comment;
         //dd($request->comment);
         $user->comments()->save($comment);
         return back();
