@@ -164,7 +164,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Nexmo\Laravel\NexmoServiceProvider::class,
+       // Pamenary\LaravelSms\Laravel\SmsServiceProvider::class,
+        Fideloper\Proxy\TrustedProxyServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -228,6 +230,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Nexmo' => \Nexmo\Laravel\Facade\Nexmo::class
+       //'Sms' => Pamenary\LaravelSms\Laravel\Facade\Sms::class,
 
     ],
 
