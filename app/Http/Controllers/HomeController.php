@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Comment;
 use App\Group;
 use App\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 use App\Food;
@@ -51,7 +52,16 @@ class HomeController extends Controller
     public function internet()
     {
         $tel = \Auth::user()->phone;
-        return 1;
+        $client = new client();
+        try {
+            $response = $client->request('GET', 'http://www.tcisms.com/send_via_get/send_sms.php?username=basiri&password=110110&sender_number=3000579557&receiver_number='.$tel.'&note=hoger');//todo volunteery system
+
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            echo 'Caught response: ' . $e->getResponse()->getStatusCode();
+        }
+
+
+        return redirect()->back();
     }
 
     public function getFoods(Request $request)
